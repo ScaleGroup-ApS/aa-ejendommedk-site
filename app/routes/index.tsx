@@ -1,17 +1,17 @@
 /**
- * Homepage Route
- *
- * Server-side loader fetches WP front page and site info.
- * Full SEO: Open Graph, Twitter Cards, JSON-LD WebSite schema.
+ * AA-Ejendomme ApS — Corporate One-Page Website
+ * Designed by: CSS & React Architect AI
  */
+import { useRef, useState, useEffect, type FormEvent } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import type { Route } from "./+types/index";
-import { Header } from "~/components/Header";
-import { Footer } from "~/components/Footer";
-import { WpContent } from "~/components/WpContent";
-import { JsonLd } from "~/components/JsonLd";
-import { getFrontPage, getSiteInfo } from "~/lib/wp-api";
+import { getSiteInfo, getFrontPage } from "~/lib/wp-api";
 import { buildMeta, buildWebsiteJsonLd, buildPageJsonLd, getFeaturedImageUrl, stripHtml } from "~/lib/seo";
 import type { WpPage, WpSiteInfo } from "~/lib/wp-types";
+import { Header } from "~/components/Header";
+import { Footer } from "~/components/Footer";
+import { JsonLd } from "~/components/JsonLd";
+import { WpContent } from "~/components/WpContent";
 
 // ── Loader ───────────────────────────────────────────────────────────────────
 
