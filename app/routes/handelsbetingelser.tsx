@@ -19,7 +19,7 @@ export function meta({ data }: Route.MetaArgs) {
   const siteUrl = data?.siteUrl ?? "";
   const title = `Handelsbetingelser | ${siteName}`;
   const description =
-    "Handelsbetingelser for AA-Ejendomme ApS — vilkår for samarbejde og udlejning.";
+    "Handelsbetingelser for AA-Ejendomme ApS — vilkår for privat boligudlejning.";
   return [
     ...buildMeta({
       title,
@@ -67,9 +67,10 @@ export default function Handelsbetingelser({ loaderData }: Route.ComponentProps)
                 1. Generelt
               </h2>
               <p>
-                Disse handelsbetingelser gælder for alle aftaler om
-                udlejning, udvikling og ejendomsrelaterede ydelser indgået
-                med AA-Ejendomme ApS, medmindre andet er skriftligt aftalt.
+                Disse handelsbetingelser gælder for aftaler om privat
+                boligudlejning indgået med AA-Ejendomme ApS, medmindre
+                andet er skriftligt aftalt. AA-Ejendomme ApS udlejer
+                udelukkende til private – ikke til erhverv.
               </p>
             </div>
 

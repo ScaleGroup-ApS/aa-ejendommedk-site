@@ -19,7 +19,7 @@ export function meta({ data }: Route.MetaArgs) {
   const siteUrl = data?.siteUrl ?? "";
   const title = `Kontakt | ${siteName}`;
   const description =
-    "Kontakt AA-Ejendomme ApS i Roskilde. Vi besvarer gerne spørgsmål om udlejning, udvikling og investering.";
+    "Kontakt AA-Ejendomme ApS i Roskilde. Vi besvarer gerne spørgsmål om vores private lejeboliger.";
   return [
     ...buildMeta({
       title,
@@ -59,9 +59,8 @@ export default function Kontakt({ loaderData }: Route.ComponentProps) {
             </h1>
             <div className="accent-divider mb-8" />
             <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "#CBD5E1" }}>
-              Har du spørgsmål om et af vores lejemål, ønsker at drøfte et
-              udviklingsprojekt eller er nysgerrig på investeringsmuligheder?
-              Vi hører gerne fra dig.
+              Har du spørgsmål om en af vores private lejeboliger, eller
+              ønsker du at komme på venteliste? Vi hører gerne fra dig.
             </p>
           </div>
         </section>
