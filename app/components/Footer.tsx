@@ -23,6 +23,20 @@ export function Footer({ siteName = "Site", siteDescription }: FooterProps) {
                 {siteDescription}
               </p>
             )}
+            <address className="mt-6 not-italic text-sm text-text-on-dark/60 leading-relaxed">
+              AA-Ejendomme ApS
+              <br />
+              Risø Huse 1, 4000 Roskilde
+              <br />
+              CVR: 38891197
+              <br />
+              <a
+                href="mailto:kontakt@aa-ejendomme.dk"
+                className="hover:text-white transition-colors"
+              >
+                kontakt@aa-ejendomme.dk
+              </a>
+            </address>
           </div>
 
           {/* Navigation Column */}

@@ -108,11 +108,19 @@ export default function Kontakt({ loaderData }: Route.ComponentProps) {
                 Vi besvarer alle henvendelser så hurtigt som muligt – typisk
                 inden for én til to hverdage.
               </p>
-              <p className="text-sm leading-relaxed" style={{ color: "#94A3B8" }}>
-                For generelle henvendelser kan du skrive til os pr. brev på
-                ovenstående adresse. Kontaktoplysninger opdateres løbende
-                her på siden.
-              </p>
+              <dl className="space-y-3 text-sm" style={{ color: "#CBD5E1" }}>
+                <div>
+                  <dt className="section-label mb-1">E-mail</dt>
+                  <dd>
+                    <a
+                      href="mailto:kontakt@aa-ejendomme.dk"
+                      className="text-primary hover:underline"
+                    >
+                      kontakt@aa-ejendomme.dk
+                    </a>
+                  </dd>
+                </div>
+              </dl>
             </div>
           </div>
         </section>

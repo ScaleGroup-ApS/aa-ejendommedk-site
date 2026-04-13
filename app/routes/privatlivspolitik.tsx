@@ -84,6 +84,14 @@ export default function Privatlivspolitik({ loaderData }: Route.ComponentProps) 
                 4000 Roskilde
                 <br />
                 CVR: 38891197
+                <br />
+                E-mail:{" "}
+                <a
+                  href="mailto:kontakt@aa-ejendomme.dk"
+                  className="text-primary hover:underline"
+                >
+                  kontakt@aa-ejendomme.dk
+                </a>
               </address>
             </div>
 
