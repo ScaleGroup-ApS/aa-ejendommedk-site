@@ -19,7 +19,7 @@ export function meta({ data }: Route.MetaArgs) {
   const siteUrl = data?.siteUrl ?? "";
   const title = `Om os | ${siteName}`;
   const description =
-    "Lær AA-Ejendomme ApS at kende — specialister i ejendomsudvikling, erhvervsudlejning og investering i Roskilde og omegn.";
+    "Lær AA-Ejendomme ApS at kende — privat boligudlejning i Roskilde og omegn. Vi udlejer udelukkende til private – ikke erhverv.";
   return [
     ...buildMeta({
       title,
@@ -55,15 +55,15 @@ export default function OmOs({ loaderData }: Route.ComponentProps) {
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6"
               style={{ fontFamily: "var(--font-heading)", color: "#F1F5F9" }}
             >
-              Lokale specialister i{" "}
-              <span className="gradient-text">ejendomme</span>
+              Privat <span className="gradient-text">boligudlejning</span> i
+              Roskilde
             </h1>
             <div className="accent-divider mb-8" />
             <p className="text-lg md:text-xl leading-relaxed" style={{ color: "#CBD5E1" }}>
-              AA-Ejendomme ApS er en Roskilde-baseret virksomhed med fokus på
-              udvikling, udlejning og investering i ejendomme. Vi skaber
-              bæredygtig værdi gennem langsigtede partnerskaber og kvalitet i
-              alle led af processen.
+              AA-Ejendomme ApS er en Roskilde-baseret virksomhed, der
+              udelukkende beskæftiger sig med privat boligudlejning. Vi
+              udlejer ikke erhvervslokaler – vores fokus er gode, velholdte
+              boliger til private lejere.
             </p>
           </div>
         </section>
@@ -78,10 +78,9 @@ export default function OmOs({ loaderData }: Route.ComponentProps) {
                 Vores tilgang
               </h2>
               <p className="leading-relaxed" style={{ color: "#CBD5E1" }}>
-                Vi tror på, at gode ejendomme skabes i samarbejde med
-                lokalsamfundet. Det betyder omhyggelig planlægning, ansvarligt
-                byggeri og en vedholdende fokus på at skabe værdi for både
-                lejere, investorer og naboer.
+                Vi tror på ordentlige lejeforhold, klar kommunikation og
+                velholdte boliger. Målet er langvarige, stabile lejemål,
+                hvor både lejer og udlejer føler sig trygge.
               </p>
             </div>
 
@@ -96,25 +95,28 @@ export default function OmOs({ loaderData }: Route.ComponentProps) {
                 <li className="flex gap-3">
                   <span className="timeline-dot mt-2" />
                   <span>
-                    <strong style={{ color: "#F1F5F9" }}>Projektudvikling</strong> — fra
-                    grundkøb til nøglefærdig ejendom.
+                    <strong style={{ color: "#F1F5F9" }}>Privat boligudlejning</strong> —
+                    velholdte lejeboliger til private lejere i Roskildeområdet.
                   </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="timeline-dot mt-2" />
                   <span>
-                    <strong style={{ color: "#F1F5F9" }}>Erhvervsudlejning</strong> —
-                    premium lejemål til kontorer, showrooms og lager.
+                    <strong style={{ color: "#F1F5F9" }}>Tryghed & kvalitet</strong> —
+                    klare aftaler, gode vilkår og langsigtede lejeforhold.
                   </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="timeline-dot mt-2" />
                   <span>
-                    <strong style={{ color: "#F1F5F9" }}>Investering & Forvaltning</strong>{" "}
-                    — strategisk rådgivning og professionel porteføljepleje.
+                    <strong style={{ color: "#F1F5F9" }}>Vedligehold & drift</strong> —
+                    løbende vedligeholdelse, så boligerne altid er i god stand.
                   </span>
                 </li>
               </ul>
+              <p className="mt-4 text-sm" style={{ color: "#94A3B8" }}>
+                Vi udlejer udelukkende til private – ikke til erhverv.
+              </p>
             </div>
 
             <div>
