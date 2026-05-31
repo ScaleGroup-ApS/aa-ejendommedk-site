@@ -23,6 +23,20 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+const matomoScript = `
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://scaleweb.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '53']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/scaleweb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+`;
+
 export function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="da">
@@ -31,6 +45,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <script dangerouslySetInnerHTML={{ __html: matomoScript }} />
       </head>
       <body className="min-h-screen bg-[#0F172A] text-[#E2E8F0] antialiased">
         {children}
