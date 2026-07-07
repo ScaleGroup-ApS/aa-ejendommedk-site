@@ -2,6 +2,7 @@
 # Customer Site — React Router 7 SSR (Node.js)
 # =============================================================================
 # Standalone Dockerfile for per-customer repos built via GitHub Actions.
+# TODO: upgrade to RR8
 
 # Stage 1: Install dependencies
 FROM node:20-slim AS deps
