@@ -64,11 +64,15 @@ spec:
 
           resources:
             requests:
-              cpu: 50m
+              cpu: 100m
               memory: 64Mi
             limits:
-              cpu: 200m
-              memory: 128Mi
+              # SSR is bursty: a 200m limit CFS-throttles request bursts and drives
+              # variable TTFB. 1 core lets Node SSR burst per request.
+              cpu: 1000m
+              # 128Mi left <10% headroom over the ~115Mi SSR baseline and paged
+              # CustomerPodMemoryNearLimit (incident 2026-07-10 / CRM#433).
+              memory: 256Mi
 
       imagePullSecrets:
         - name: registry-credentials
