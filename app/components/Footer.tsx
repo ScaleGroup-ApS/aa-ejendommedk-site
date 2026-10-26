@@ -71,7 +71,7 @@ export function Footer({ siteName = "Site", siteDescription }: FooterProps) {
             © {year} {siteName}. Alle rettigheder forbeholdes.
           </p>
           <p className="text-xs text-text-on-dark/30">
-            Drevet af{" "}
+            Udviklet af{" "}
             <a
               href="https://scaleweb.dk"
               target="_blank"
