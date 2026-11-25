@@ -11,11 +11,12 @@ import type { WpSiteInfo } from "~/lib/wp-types";
 import { Header } from "~/components/Header";
 import { Footer } from "~/components/Footer";
 import { JsonLd } from "~/components/JsonLd";
+import { SITE_URL } from "~/lib/site";
 
 // ── Loader ───────────────────────────────────────────────────────────────────
 
 export async function loader({ request }: Route.LoaderArgs) {
-  const siteUrl = new URL(request.url).origin;
+  const siteUrl = SITE_URL;
   const siteInfo: WpSiteInfo | null = await getSiteInfo().catch(() => null);
   return { siteInfo, siteUrl };
 }
@@ -30,10 +31,28 @@ export function meta({ data }: Route.MetaArgs) {
     siteInfo?.description ??
     "Privat boligudlejning i Roskilde og omegn — trygge og velholdte lejeboliger til private lejere.";
   return [
-    ...buildMeta({ title: siteName, description, url: siteUrl, siteName, siteUrl, type: "website", locale: "da_DK" }),
+    ...buildMeta({ title: `${siteName} - Privat boligudlejning i Roskilde`, description, url: siteUrl, siteName, siteUrl, type: "website", locale: "da_DK" }),
     { tagName: "link", rel: "canonical", href: siteUrl },
   ];
 }
+
+// Facts mirror the footer and contact page.
+const ORGANIZATION_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: "AA-Ejendomme ApS",
+  url: SITE_URL,
+  email: "kontakt@aa-ejendomme.dk",
+  taxID: "38891197",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Risø Huse 1",
+    addressLocality: "Roskilde",
+    postalCode: "4000",
+    addressCountry: "DK",
+  },
+};
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -45,6 +64,7 @@ export default function Index({ loaderData }: Route.ComponentProps) {
     <div className="flex flex-col min-h-screen">
       <Header siteName={siteName} />
       <JsonLd data={buildWebsiteJsonLd(siteInfo, siteUrl)} />
+      <JsonLd data={ORGANIZATION_JSON_LD} />
       <main className="flex-1">
         <HeroSection />
         <ServicesSection />

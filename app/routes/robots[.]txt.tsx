@@ -4,9 +4,10 @@
  * Allows all crawlers, points to the sitemap.
  */
 import type { Route } from "./+types/robots[.]txt";
+import { SITE_URL } from "~/lib/site";
 
 export function loader({ request }: Route.LoaderArgs) {
-  const siteUrl = new URL(request.url).origin;
+  const siteUrl = SITE_URL;
 
   const robotsTxt = [
     "User-agent: *",

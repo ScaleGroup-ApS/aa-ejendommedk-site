@@ -13,13 +13,14 @@ import { JsonLd } from "~/components/JsonLd";
 import { getPageBySlug, getSiteInfo } from "~/lib/wp-api";
 import { buildMeta, buildPageJsonLd, getFeaturedImageUrl, stripHtml } from "~/lib/seo";
 import type { WpPage, WpSiteInfo } from "~/lib/wp-types";
+import { SITE_URL } from "~/lib/site";
 
 // ── Loader ───────────────────────────────────────────────────────────────────
 
 export async function loader({ params, request }: Route.LoaderArgs) {
   const slug = params["*"] ?? "";
   const pageSlug = slug.split("/").filter(Boolean).pop() ?? slug;
-  const siteUrl = new URL(request.url).origin;
+  const siteUrl = SITE_URL;
 
   const [page, siteInfo] = await Promise.all([
     getPageBySlug(pageSlug).catch(() => null),

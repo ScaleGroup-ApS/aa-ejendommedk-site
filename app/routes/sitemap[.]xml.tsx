@@ -5,9 +5,10 @@
  */
 import type { Route } from "./+types/sitemap[.]xml";
 import { getPages, getPosts } from "~/lib/wp-api";
+import { SITE_URL } from "~/lib/site";
 
 export async function loader({ request }: Route.LoaderArgs) {
-  const siteUrl = new URL(request.url).origin;
+  const siteUrl = SITE_URL;
 
   // Fetch all published pages and posts from WordPress
   const [pages, posts] = await Promise.all([

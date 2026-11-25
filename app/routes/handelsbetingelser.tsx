@@ -7,9 +7,10 @@ import { getSiteInfo } from "~/lib/wp-api";
 import { buildMeta } from "~/lib/seo";
 import { Header } from "~/components/Header";
 import { Footer } from "~/components/Footer";
+import { SITE_URL } from "~/lib/site";
 
 export async function loader({ request }: Route.LoaderArgs) {
-  const siteUrl = new URL(request.url).origin;
+  const siteUrl = SITE_URL;
   const siteInfo = await getSiteInfo().catch(() => null);
   return { siteInfo, siteUrl };
 }
